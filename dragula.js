@@ -61,12 +61,7 @@ function dragula (initialContainers, options) {
   return drake;
 
   function isContainer (el, handle) {
-    handle = handle || null;
-    if (handle && o.allowNestedContainers) {
-       return drake.containers.indexOf(el) !== -1 && o.isContainer(el, handle);
-     } else {
-       return drake.containers.indexOf(el) !== -1 || o.isContainer(el);
-     }
+    return drake.containers.indexOf(el) !== -1 || o.isContainer(el, handle);
   }
 
   function events (remove) {
